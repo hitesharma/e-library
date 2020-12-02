@@ -11,4 +11,13 @@ export const resolvers = {
 			return data;
 		},
 	},
+
+	Mutation: {
+		createBook: async (root, { args }) => {
+			const newBook = new Books(_.omit(args, ['id']));
+			newBook.id = newBook._id;
+			await newBook.save();
+			return newBook;
+		},
+	},
 };

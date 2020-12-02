@@ -19,6 +19,8 @@ input BookInput {
     genre: String
 }
 
+type Mutation {
+    createBook(input: BookInput): Book
 }
 `;
 
