@@ -7,6 +7,10 @@ type Book {
     name: String
     genre: String
 }
+type author {
+    id: ID
+    name: String
+}
 
 type Query {
     books: [Book]

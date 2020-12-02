@@ -19,6 +19,14 @@ const BookSchema = new mongoose.Schema({
 	},
 });
 
-const Books = mongoose.model('book', BookSchema, 'book');
+const AuthorSchema = new mongoose.Schema({
+	name: {
+		type: String,
+		required: true,
+	},
+});
 
-export { Books };
+const Books = mongoose.model('book', BookSchema, 'book');
+const Authors = mongoose.model('author', AuthorSchema, 'author');
+
+export { Books, Authors };
