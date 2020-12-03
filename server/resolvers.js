@@ -10,6 +10,13 @@ export const resolvers = {
 			var data = await Books.findById(id);
 			return data;
 		},
+		authors: async () => {
+			return await Authors.find();
+		},
+		author: async (root, { id }) => {
+			var data = await Authors.findById(id);
+			return data;
+		},
 	},
 
 	Mutation: {
