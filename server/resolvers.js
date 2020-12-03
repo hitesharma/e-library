@@ -20,11 +20,17 @@ export const resolvers = {
 	},
 
 	Mutation: {
-		createBook: async (root, { args }) => {
-			const newBook = new Books(_.omit(args, ['id']));
+		createBook: async (root, { input }) => {
+			const newBook = new Books(_.omit(input, ['id']));
 			newBook.id = newBook._id;
 			await newBook.save();
 			return newBook;
+		},
+		createAuthor: async (root, { input }) => {
+			const newAuthor = new Authors(_.omit(input, ['id']));
+			newAuthor.id = newAuthor._id;
+			await newAuthor.save();
+			return newAuthor;
 		},
 	},
 };
