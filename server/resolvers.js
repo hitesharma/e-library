@@ -26,6 +26,13 @@ export const resolvers = {
 		},
 	},
 
+	Author: {
+		books: async (author) => {
+			let books = await Books.find({ authorId: author._id });
+			return books;
+		},
+	},
+
 	Mutation: {
 		createBook: async (root, { input }) => {
 			const newBook = new Books({

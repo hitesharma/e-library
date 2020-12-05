@@ -12,6 +12,7 @@ type Book {
 type Author {
     id: ID
     name: String
+    books: [Book]
 }
 
 type Query {
