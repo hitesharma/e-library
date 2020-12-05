@@ -6,6 +6,7 @@ type Book {
     id: ID
     name: String
     genre: String
+    author: Author
 }
 
 type Author {
@@ -24,6 +25,7 @@ input BookInput {
     id: ID
     name: String
     genre: String
+    authorId: String
 }
 
 input AuthorInput {
